@@ -1,0 +1,656 @@
+/* ============================== */
+/* GLOBAL RESET */
+/* ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ============================== */
+/* ANIMATED GMO/DNA BACKGROUND */
+/* ============================== */
+.dna-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* DNA Double Helix */
+.dna-helix {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.helix-strand {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.helix-strand::before,
+.helix-strand::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        #64ffda 10%, 
+        transparent 20%,
+        #64ffda 30%,
+        transparent 40%,
+        #64ffda 50%,
+        transparent 60%,
+        #64ffda 70%,
+        transparent 80%,
+        #64ffda 90%,
+        transparent 100%);
+    border-radius: 3px;
+}
+
+.helix-strand::before {
+    left: 0;
+    animation: helixRotate1 4s linear infinite;
+}
+
+.helix-strand::after {
+    right: 0;
+    animation: helixRotate2 4s linear infinite;
+}
+
+@keyframes helixRotate1 {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(25%) translateX(50px); }
+    50% { transform: translateY(50%) translateX(0); }
+    75% { transform: translateY(75%) translateX(-50px); }
+    100% { transform: translateY(100%) translateX(0); }
+}
+
+@keyframes helixRotate2 {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(25%) translateX(-50px); }
+    50% { transform: translateY(50%) translateX(0); }
+    75% { transform: translateY(75%) translateX(50px); }
+    100% { transform: translateY(100%) translateX(0); }
+}
+
+/* Floating Molecules */
+.molecule {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+}
+
+.molecule-atom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #667eea;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+}
+
+.molecule-bond {
+    position: absolute;
+    height: 2px;
+    background: #667eea;
+    transform-origin: left center;
+}
+
+.molecule:nth-child(2) {
+    top: 10%;
+    left: 15%;
+    animation: float1 8s ease-in-out infinite;
+}
+
+.molecule:nth-child(3) {
+    top: 60%;
+    left: 80%;
+    animation: float2 10s ease-in-out infinite;
+}
+
+.molecule:nth-child(4) {
+    top: 40%;
+    left: 10%;
+    animation: float3 12s ease-in-out infinite;
+}
+
+.molecule:nth-child(5) {
+    top: 70%;
+    left: 70%;
+    animation: float4 9s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -20px) rotate(120deg); }
+    66% { transform: translate(-20px, 30px) rotate(240deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-40px, 30px) rotate(120deg); }
+    66% { transform: translate(20px, -40px) rotate(240deg); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(40px, 40px) rotate(180deg); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-30px, -30px) rotate(180deg); }
+}
+
+/* Gene Sequences */
+.gene-sequence {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #667eea;
+    white-space: nowrap;
+    opacity: 0.2;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.gene-sequence:nth-child(6) {
+    top: 15%;
+    left: 5%;
+    animation: scrollGene1 15s linear infinite;
+}
+
+.gene-sequence:nth-child(7) {
+    bottom: 25%;
+    left: 10%;
+    animation: scrollGene2 18s linear infinite;
+}
+
+.gene-sequence:nth-child(8) {
+    top: 50%;
+    right: 10%;
+    animation: scrollGene3 20s linear infinite;
+}
+
+@keyframes scrollGene1 {
+    0% { transform: translateX(-100%); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateX(100vw); opacity: 0; }
+}
+
+@keyframes scrollGene2 {
+    0% { transform: translateX(100%); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateX(-100vw); opacity: 0; }
+}
+
+@keyframes scrollGene3 {
+    0% { transform: translateX(100%); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateX(-100vw); opacity: 0; }
+}
+
+/* Cell Structures */
+.cell {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid rgba(100, 255, 218, 0.3);
+    opacity: 0.2;
+}
+
+.cell:nth-child(9) {
+    top: 20%;
+    right: 10%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.cell:nth-child(10) {
+    bottom: 30%;
+    left: 15%;
+    animation: pulse 4s ease-in-out infinite 0.5s;
+}
+
+.cell:nth-child(11) {
+    top: 60%;
+    right: 20%;
+    animation: pulse 3.5s ease-in-out infinite 1s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.2); opacity: 0.4; }
+}
+
+/* HEALTH Icons */
+.health-icon {
+    position: absolute;
+    font-size: 40px;
+    color: #43e97b;
+    opacity: 0.15;
+    animation: iconFloat 6s ease-in-out infinite;
+}
+
+.health-icon:nth-child(12) {
+    top: 25%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.health-icon:nth-child(13) {
+    top: 50%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.health-icon:nth-child(14) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* POLITICS Icons */
+.politics-icon {
+    position: absolute;
+    font-size: 40px;
+    color: #fa709a;
+    opacity: 0.15;
+    animation: iconFloat 6s ease-in-out infinite;
+}
+
+.politics-icon:nth-child(15) {
+    top: 35%;
+    right: 8%;
+    animation-delay: 0.5s;
+}
+
+.politics-icon:nth-child(16) {
+    bottom: 40%;
+    left: 5%;
+    animation-delay: 1.5s;
+}
+
+.politics-icon:nth-child(17) {
+    top: 70%;
+    right: 25%;
+    animation-delay: 2.5s;
+}
+
+/* HEALTH Scrolling Text */
+.health-text {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #43e97b;
+    white-space: nowrap;
+    opacity: 0.15;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.health-text:nth-child(18) {
+    top: 10%;
+    animation: scrollText1 25s linear infinite;
+}
+
+.health-text:nth-child(19) {
+    bottom: 15%;
+    animation: scrollText2 30s linear infinite;
+}
+
+@keyframes scrollText1 {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+
+@keyframes scrollText2 {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100vw); }
+}
+
+/* POLITICS Scrolling Text */
+.politics-text {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #fa709a;
+    white-space: nowrap;
+    opacity: 0.15;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.politics-text:nth-child(20) {
+    top: 45%;
+    animation: scrollText1 28s linear infinite;
+}
+
+.politics-text:nth-child(21) {
+    bottom: 35%;
+    animation: scrollText2 32s linear infinite;
+}
+
+/* ============================== */
+/* HEADER - CENTERED DESIGN */
+/* ============================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 52, 96, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    gap: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    letter-spacing: 10px;
+    color: #64ffda;
+    font-weight: 900;
+    text-shadow: 0 0 30px rgba(100, 255, 218, 0.6),
+                 0 0 50px rgba(100, 255, 218, 0.4),
+                 0 0 70px rgba(100, 255, 218, 0.2);
+    animation: glow 2s ease-in-out infinite alternate;
+    margin: 0;
+    text-align: center;
+}
+
+@keyframes glow {
+    from { 
+        text-shadow: 0 0 20px rgba(100, 255, 218, 0.5),
+                     0 0 40px rgba(100, 255, 218, 0.3),
+                     0 0 60px rgba(100, 255, 218, 0.2);
+    }
+    to { 
+        text-shadow: 0 0 30px rgba(100, 255, 218, 0.8), 
+                     0 0 60px rgba(100, 255, 218, 0.5), 
+                     0 0 90px rgba(100, 255, 218, 0.3);
+    }
+}
+
+nav {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+    padding: 8px 0;
+    white-space: nowrap;
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+    transition: width 0.3s;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 1),
+                 0 0 40px rgba(100, 255, 218, 0.6),
+                 0 0 60px rgba(100, 255, 218, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ============================== */
+/* MAIN CONTENT CONTAINER */
+/* ============================== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 180px 20px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section {
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(100, 255, 218, 0.05) 100%);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(100, 255, 218, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    color: #64ffda;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+/* ============================== */
+/* CONTACT FORM STYLING */
+/* ============================== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: #64ffda;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.form-group label i {
+    margin-right: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(26, 26, 46, 0.6);
+    border: 2px solid rgba(100, 255, 218, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    color: #b8e0d2;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(184, 224, 210, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+    background: rgba(26, 26, 46, 0.8);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #64ffda 0%, #4facfe 100%);
+    color: #1a1a2e;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(100, 255, 218, 0.3);
+    margin-top: 10px;
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(100, 255, 218, 0.5);
+    background: linear-gradient(135deg, #4facfe 0%, #64ffda 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+.success-message {
+    display: none;
+    background: linear-gradient(135deg, rgba(67, 233, 123, 0.2), rgba(56, 249, 215, 0.2));
+    border: 2px solid rgba(67, 233, 123, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #43e97b;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.success-message i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================== */
+/* RESPONSIVE DESIGN */
+/* ============================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        letter-spacing: 6px;
+    }
+
+    header {
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 25px;
+    }
+
+    nav a {
+        font-size: 0.95em;
+    }
+
+    .container {
+        padding-top: 200px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .content-section {
+        padding: 30px 20px;
+    }
+
+    .content-section h2 {
+        font-size: 2em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .submit-btn {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        letter-spacing: 4px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 0.85em;
+    }
+
+    .content-section h2 {
+        font-size: 1.6em;
+    }
+
+    .content-section {
+        padding: 25px 15px;
+    }
+}

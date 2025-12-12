@@ -3,504 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Hub - CTRL+ALT+DNA</title>
+    <title>Explore - CTRL+ALT+DNA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/explore.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/Explore.css">
 </head>
 <body>
+    <!-- Animated Background - SINGLE INSTANCE -->
+    <div class="dna-background">
+        <!-- DNA Double Helix -->
+        <div class="dna-helix">
+            <div class="helix-strand"></div>
+        </div>
 
-      <!-- Subtle Background Elements -->
-    <div class="bg-decoration">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        
-        <!-- Floating DNA Strands -->
-        <div class="floating-dna" style="top: 15%; left: 10%;">
-            <div class="dna-strand"></div>
+        <!-- Floating Molecules - SCIENCE -->
+        <div class="molecule">
+            <div class="molecule-atom" style="top: 0; left: 0;"></div>
+            <div class="molecule-atom" style="top: 0; right: 0;"></div>
+            <div class="molecule-atom" style="bottom: 0; left: 30px;"></div>
+            <div class="molecule-atom" style="bottom: 0; right: 30px;"></div>
+            <div class="molecule-bond" style="top: 10px; left: 10px; width: 60px; transform: rotate(0deg);"></div>
+            <div class="molecule-bond" style="top: 10px; left: 10px; width: 50px; transform: rotate(45deg);"></div>
+            <div class="molecule-bond" style="top: 10px; right: 10px; width: 50px; transform: rotate(-45deg);"></div>
         </div>
-        <div class="floating-dna" style="top: 60%; right: 15%;">
-            <div class="dna-strand"></div>
+
+        <div class="molecule">
+            <div class="molecule-atom" style="top: 0; left: 0;"></div>
+            <div class="molecule-atom" style="top: 0; right: 0;"></div>
+            <div class="molecule-atom" style="bottom: 0; left: 30px;"></div>
+            <div class="molecule-atom" style="bottom: 0; right: 30px;"></div>
+            <div class="molecule-bond" style="top: 10px; left: 10px; width: 60px;"></div>
+            <div class="molecule-bond" style="bottom: 10px; left: 40px; width: 40px;"></div>
         </div>
-        <div class="floating-dna" style="bottom: 25%; left: 20%;">
-            <div class="dna-strand"></div>
+
+        <div class="molecule">
+            <div class="molecule-atom" style="top: 10px; left: 30px;"></div>
+            <div class="molecule-atom" style="top: 50px; left: 0;"></div>
+            <div class="molecule-atom" style="top: 50px; right: 0;"></div>
+            <div class="molecule-bond" style="top: 20px; left: 15px; width: 30px; transform: rotate(-45deg);"></div>
+            <div class="molecule-bond" style="top: 20px; right: 15px; width: 30px; transform: rotate(45deg);"></div>
         </div>
-        
-        <!-- Health Icons -->
-        <div class="floating-icon health" style="top: 20%; right: 10%;">
-            <i class="fas fa-heartbeat"></i>
+
+        <div class="molecule">
+            <div class="molecule-atom" style="top: 0; left: 30px;"></div>
+            <div class="molecule-atom" style="bottom: 0; left: 0;"></div>
+            <div class="molecule-atom" style="bottom: 0; right: 0;"></div>
+            <div class="molecule-bond" style="top: 10px; left: 15px; width: 40px; transform: rotate(60deg);"></div>
+            <div class="molecule-bond" style="top: 10px; right: 15px; width: 40px; transform: rotate(-60deg);"></div>
         </div>
-        <div class="floating-icon health" style="bottom: 30%; left: 8%;">
-            <i class="fas fa-pills"></i>
-        </div>
-        <div class="floating-icon health" style="top: 70%; right: 25%;">
-            <i class="fas fa-apple-alt"></i>
-        </div>
-        <div class="floating-icon health" style="bottom: 15%; right: 20%;">
-            <i class="fas fa-stethoscope"></i>
-        </div>
-        
-        <!-- Science Icons -->
-        <div class="floating-icon science" style="top: 35%; left: 5%;">
-            <i class="fas fa-microscope"></i>
-        </div>
-        <div class="floating-icon science" style="bottom: 40%; right: 8%;">
-            <i class="fas fa-flask"></i>
-        </div>
-        <div class="floating-icon science" style="top: 55%; right: 30%;">
-            <i class="fas fa-atom"></i>
-        </div>
-        <div class="floating-icon science" style="bottom: 50%; left: 15%;">
-            <i class="fas fa-seedling"></i>
-        </div>
-        
-        <!-- Political Icons -->
-        <div class="floating-icon political" style="top: 45%; right: 5%;">
-            <i class="fas fa-balance-scale"></i>
-        </div>
-        <div class="floating-icon political" style="bottom: 20%; left: 30%;">
-            <i class="fas fa-gavel"></i>
-        </div>
-        <div class="floating-icon political" style="top: 25%; left: 25%;">
-            <i class="fas fa-landmark"></i>
-        </div>
-        <div class="floating-icon political" style="top: 80%; left: 40%;">
-            <i class="fas fa-file-contract"></i>
-        </div>
-        
-        <!-- Floating Molecules -->
-        <div class="molecule" style="top: 10%; left: 15%;">
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
-        </div>
-        <div class="molecule" style="bottom: 35%; right: 12%;">
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
-        </div>
-        <div class="molecule" style="top: 65%; left: 35%;">
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
-        </div>
-        
-        <!-- Gene Sequence Text -->
-        <div class="gene-text" style="top: 12%; animation-delay: 0s;">ATCG • GENE EDITING • CRISPR • BIOTECHNOLOGY</div>
-        <div class="gene-text" style="top: 40%; animation-delay: 5s;">GMO • GENETIC MODIFICATION • DNA SEQUENCE</div>
-        <div class="gene-text" style="bottom: 20%; animation-delay: 10s;">HEALTH • SCIENCE • POLICY • INNOVATION</div>
+
+        <!-- Gene Sequences - SCIENCE -->
+        <div class="gene-sequence">ATCG-TAGC-CGTA-ATGC-GCTA-TACG-CGAT-GCTA • CRISPR • Gene Editing</div>
+        <div class="gene-sequence">GCTA-ATCG-TAGC-CGTA-GCTA-ATGC-TACG-ATCG • Biotechnology • DNA</div>
+        <div class="gene-sequence">TAGC-CGTA-ATGC-GCTA-TACG-CGAT-ATCG-TAGC • Genetic Engineering</div>
+
+        <!-- Cell Structures -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <!-- HEALTH Icons -->
+        <div class="health-icon"><i class="fas fa-heartbeat"></i></div>
+        <div class="health-icon"><i class="fas fa-pills"></i></div>
+        <div class="health-icon"><i class="fas fa-apple-alt"></i></div>
+
+        <!-- POLITICS Icons -->
+        <div class="politics-icon"><i class="fas fa-balance-scale"></i></div>
+        <div class="politics-icon"><i class="fas fa-gavel"></i></div>
+        <div class="politics-icon"><i class="fas fa-landmark"></i></div>
+
+        <!-- HEALTH Scrolling Text -->
+        <div class="health-text">• NUTRITION • SAFETY TESTING • ALLERGEN SCREENING • HEALTH IMPACT • VITAMIN ENHANCEMENT •</div>
+        <div class="health-text">• FOOD SECURITY • DIETARY BENEFITS • CLINICAL TRIALS • NUTRITIONAL VALUE •</div>
+
+        <!-- POLITICS Scrolling Text -->
+        <div class="politics-text">• REGULATIONS • FDA APPROVAL • LABELING LAWS • POLICY DEBATES • ETHICAL CONSIDERATIONS •</div>
+        <div class="politics-text">• INTERNATIONAL TRADE • CONSUMER RIGHTS • BIOSAFETY PROTOCOLS • LEGISLATION •</div>
     </div>
 
-    <!-- Background Elements -->
-    <div class="bg-decoration">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        
-        <div class="gene-text" style="top: 12%; animation-delay: 0s;">ATCG • GENE EDITING • CRISPR • BIOTECHNOLOGY</div>
-        <div class="gene-text" style="top: 40%; animation-delay: 5s;">GMO • GENETIC MODIFICATION • DNA SEQUENCE</div>
-        <div class="gene-text" style="bottom: 20%; animation-delay: 10s;">HEALTH • SCIENCE • POLICY • INNOVATION</div>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="logo-text">CTRL+ALT+DNA</span>
-            </div>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="About.html">About</a>
-                <a href="Explore.html" class="active">Explore</a>
-                <a href="Quiz.html">Quiz</a>
-            </nav>
-        </div>
+    <!-- Header - Fixed at Top -->
+    <header>
+        <h1>CTRL+ALT+DNA</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Explore.html">Explore</a>
+            <a href="interactive.html">Interactive Hub</a>
+            <a href="AboutUs.html">About</a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="main-container">
-        <div class="page-header">
-            <span class="badge">Interactive Learning</span>
-            <h1>GMO Interactive Hub</h1>
-            <p class="lead">Explore, learn, and discover the world of genetic modification through interactive experiences</p>
-        </div>
-
-        <!-- Tab Navigation -->
-        <div class="tab-navigation">
-            <button class="tab-btn active" data-tab="timeline">
-                <i class="fas fa-clock"></i>
-                <span>Timeline</span>
-            </button>
-            <button class="tab-btn" data-tab="comparison">
-                <i class="fas fa-exchange-alt"></i>
-                <span>Before & After</span>
-            </button>
-            <button class="tab-btn" data-tab="cases">
-                <i class="fas fa-chart-line"></i>
-                <span>Success Stories</span>
-            </button>
-            <button class="tab-btn" data-tab="myths">
-                <i class="fas fa-search"></i>
-                <span>Myth Busters</span>
-            </button>
-            <button class="tab-btn" data-tab="videos">
-                <i class="fas fa-clone"></i>
-                <span>Educational Videos</span>
-            </button>
-        </div>
-
-        <!-- Timeline Tab -->
-        <div id="timeline" class="tab-content active">
-            <div class="content-card">
-                <h2 class="section-title">
-                    <i class="fas fa-clock"></i>
-                    GMO Evolution Timeline
-                </h2>
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-marker">1973</div>
-                        <div class="timeline-content">
-                            <h3>The Beginning</h3>
-                            <p>Herbert Boyer and Stanley Cohen create the first genetically modified organism using recombinant DNA technology.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">1982</div>
-                        <div class="timeline-content">
-                            <h3>Medical Breakthrough</h3>
-                            <p>FDA approves the first GMO product: human insulin produced by genetically modified bacteria.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">1994</div>
-                        <div class="timeline-content">
-                            <h3>First GMO Food</h3>
-                            <p>Flavr Savr tomato becomes the first genetically modified food approved for commercial sale.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2000</div>
-                        <div class="timeline-content">
-                            <h3>Golden Rice</h3>
-                            <p>Golden Rice, engineered to produce beta-carotene, is developed to combat vitamin A deficiency.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2015</div>
-                        <div class="timeline-content">
-                            <h3>CRISPR Revolution</h3>
-                            <p>CRISPR gene-editing technology gains widespread adoption, making genetic modification more precise.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2025</div>
-                        <div class="timeline-content">
-                            <h3>Modern Era</h3>
-                            <p>GMO crops grown on over 190 million hectares globally, addressing food security and climate challenges.</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-item active" onclick="showContent('learning-objects')">Learning Objects</div>
+                <div class="sidebar-item" onclick="showContent('introduction')">Introduction</div>
+                <div class="sidebar-item" onclick="showContent('perspectives')">Perspectives</div>
+                <div class="sidebar-item" onclick="showContent('organizations')">Organizations</div>
+                <div class="sidebar-item" onclick="showContent('companies')">Companies</div>
+                <div class="sidebar-item" onclick="showContent('legal')">Legal</div>
+                <div class="sidebar-item" onclick="showContent('trivia')">Trivia Quiz</div>
             </div>
-        </div>
 
-        <!-- Comparison Tab -->
-        <div id="comparison" class="tab-content">
-            <div class="content-card">
-                <h2 class="section-title">
-                    <i class="fas fa-exchange-alt"></i>
-                    Before & After: GMO Impact
-                </h2>
-                <p class="text-center">Drag the slider to compare traditional crops vs GMO crops</p>
-                
-                <div class="comparison-container" id="comparisonContainer">
-                    <div class="comparison-side before">
-                        <div class="comparison-label">Traditional Crops</div>
-                        <div class="comparison-features">
-                            <div class="feature-item">
-                                <i class="fas fa-arrow-down"></i>
-                                <span>Lower Yield</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-bug"></i>
-                                <span>Heavy Pesticide Use</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-tint"></i>
-                                <span>More Water Needed</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comparison-side after" id="afterSide">
-                        <div class="comparison-label">GMO Crops</div>
-                        <div class="comparison-features">
-                            <div class="feature-item">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>Higher Yield</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-leaf"></i>
-                                <span>Reduced Pesticides</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-droplet"></i>
-                                <span>Water Efficient</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-handle" id="sliderHandle">
-                        <div class="slider-button"></div>
-                    </div>
+            <div class="content-area">
+                <!-- Learning Objects Section -->
+                <div id="learning-objects" class="content-section">
+                    <h2>The Genetically Modified World</h2>
+                    <h3>Learning Objects</h3>
+                    <p>At the end of this lesson, you are expected to:</p>
+                    <ul>
+                        <li>Define genetically modified organisms (GMOs)</li>
+                        <li>List the uses and applications of GMO technology</li>
+                        <li>Evaluate the impact of genetic modification in our society</li>
+                        <li>Understand the health, scientific, and political perspectives on GMOs</li>
+                    </ul>
+                    <button class="done-btn" onclick="showContent('introduction')">Done</button>
                 </div>
-            </div>
-        </div>
 
-        <!-- Success Stories Tab -->
-        <div id="cases" class="tab-content">
-            <div class="content-card">
-                <h2 class="section-title">
-                    <i class="fas fa-chart-line"></i>
-                    Real-World Success Stories
-                </h2>
-                
-                <div class="success-grid">
-                    <div class="success-card">
-                        <div class="success-icon">🌾</div>
-                        <h3>Golden Rice</h3>
-                        <div class="success-details">
-                            <div class="detail-item">
-                                <strong>Problem:</strong>
-                                <p>Vitamin A deficiency affecting millions in developing countries</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Solution:</strong>
-                                <p>Rice engineered to produce beta-carotene</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Impact:</strong>
-                                <p>Potential to save 500,000+ children annually from blindness and death</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="success-card">
-                        <div class="success-icon">🍎</div>
-                        <h3>Arctic Apples</h3>
-                        <div class="success-details">
-                            <div class="detail-item">
-                                <strong>Problem:</strong>
-                                <p>Apples brown quickly after slicing, leading to food waste</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Solution:</strong>
-                                <p>Gene modification to prevent enzymatic browning</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Impact:</strong>
-                                <p>40% reduction in apple waste, longer shelf life</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="success-card">
-                        <div class="success-icon">🌱</div>
-                        <h3>Bt Cotton</h3>
-                        <div class="success-details">
-                            <div class="detail-item">
-                                <strong>Problem:</strong>
-                                <p>Devastating pest damage and heavy pesticide use</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Solution:</strong>
-                                <p>Cotton with built-in pest resistance</p>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Impact:</strong>
-                                <p>37% reduction in pesticide use, increased farmer income by 50%</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Introduction Section -->
+                <div id="introduction" class="content-section hidden">
+                    <h2>Introduction</h2>
+                    <p>This presentation moves beyond the laboratory to explore how genetic modification technology intersects with key pillars of society: examining the scientific consensus on their creation and long-term viability, assessing the crucial question of health and consumer safety, and decoding the complex political, regulatory, and economic debates that shape what lands on our plates.</p>
+                    <p>We will unpack the facts and the fears surrounding engineered food.</p>
+                    <h3>What are GMOs?</h3>
+                    <p>GMO stands for genetically modified organisms, which is any organism whose genetic material is altered through genetic engineering techniques, and cannot occur naturally through mating and/or natural recombination.</p>
+                    <button class="done-btn" onclick="showContent('perspectives')">Next</button>
                 </div>
-            </div>
-        </div>
 
-        <!-- Myth Busters Tab -->
-        <div id="myths" class="tab-content">
-            <div class="content-card">
-                <h2 class="section-title">
-                    <i class="fas fa-search"></i>
-                    Myth Busters: Facts vs Fiction
-                </h2>
-                <p class="text-center">Click on each myth to reveal the truth</p>
-                
-                <div class="myths-grid">
-                    <div class="myth-card" data-myth-id="cancer">
-                        <div class="myth-header">
-                            <div class="myth-icon">❌</div>
-                            <h3>Myth: GMOs Cause Cancer</h3>
-                        </div>
-                        <p class="myth-teaser">Click to reveal the truth...</p>
-                        <div class="myth-reveal">
-                            <div class="fact-label">FACT:</div>
-                            <p>No credible scientific evidence links GMO consumption to cancer. The American Cancer Society, WHO, and numerous peer-reviewed studies confirm GMOs are safe.</p>
-                            <div class="sources">
-                                <strong>Sources:</strong> American Cancer Society, WHO Food Safety, National Academy of Sciences
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="myth-card" data-myth-id="unsafe">
-                        <div class="myth-header">
-                            <div class="myth-icon">🍽️</div>
-                            <h3>Myth: GMOs Are Unsafe to Eat</h3>
-                        </div>
-                        <p class="myth-teaser">Click to reveal the truth...</p>
-                        <div class="myth-reveal">
-                            <div class="fact-label">FACT:</div>
-                            <p>GMOs undergo rigorous safety testing - more than conventional foods. Over 3,000 scientific studies confirm their safety for human consumption.</p>
-                            <div class="sources">
-                                <strong>Sources:</strong> FDA, European Commission, American Medical Association
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="myth-card" data-myth-id="environment">
-                        <div class="myth-header">
-                            <div class="myth-icon">🌱</div>
-                            <h3>Myth: GMOs Harm the Environment</h3>
-                        </div>
-                        <p class="myth-teaser">Click to reveal the truth...</p>
-                        <div class="myth-reveal">
-                            <div class="fact-label">FACT:</div>
-                            <p>GMO crops have reduced pesticide use by 37% and increased crop yields by 22%, reducing the need for deforestation. They also help conserve soil and water.</p>
-                            <div class="sources">
-                                <strong>Sources:</strong> PLOS ONE Meta-Analysis, USDA Environmental Impact Studies
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="myth-card" data-myth-id="corporations">
-                        <div class="myth-header">
-                            <div class="myth-icon">👥</div>
-                            <h3>Myth: GMOs Only Benefit Big Corporations</h3>
-                        </div>
-                        <p class="myth-teaser">Click to reveal the truth...</p>
-                        <div class="myth-reveal">
-                            <div class="fact-label">FACT:</div>
-                            <p>Small-scale farmers in developing countries have seen income increases of 50-68% from GMO crops like Bt cotton. GMOs help combat food insecurity globally.</p>
-                            <div class="sources">
-                                <strong>Sources:</strong> FAO Reports, World Bank Agricultural Studies
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Videos Tab -->
-        <div id="videos" class="tab-content">
-            <div class="content-card">
-                <h2 class="section-title">
-                    <i class="fas fa-clone"></i>
-                    GMO Educational Videos
-                </h2>
-                
-                <div class="videos-section">
-                    <h3 class="section-title">📺 Educational Media Library</h3>
-                    <p class="section-description">Watch, listen, and explore GMO content through multiple formats</p>
+                <!-- Perspectives Section -->
+                <div id="perspectives" class="content-section hidden">
+                    <h2>Three Critical Perspectives on GMOs</h2>
                     
-                    <div class="videos-grid">
-                        <div class="video-card interactive">
-                            <div class="video-badge science">Science</div>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/7TmcXYp8xu4" 
-                                        title="GMO Science" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
+                    <table class="perspective-table">
+                        <thead>
+                            <tr>
+                                <th>🏥 Health Perspective</th>
+                                <th>🔬 Science Perspective</th>
+                                <th>⚖️ Political Perspective</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>In the market today, it is likely that some food products have been genetically modified such as corn, canola, soybeans, apples, potatoes etc.</p>
+                                    <p>On the view of nutrition, GMOs are just as safe as their non-GMO counterparts. Moreover, these modified products have actually been altered to improve their nutritional value.</p>
+                                    <p>GMO products can be safely fed to animals. Rigid tests and careful processes address concerns of potential allergenicity, gene transfer and outcrossing.</p>
+                                </td>
+                                <td>
+                                    <p>Scientifically, genetic engineering is viewed as a highly precise and rapid tool for biological innovation. It allows scientists to insert or modify specific, single genes to achieve desired traits.</p>
+                                    <p>It is essential for improving yields, enhancing nutritional content and reducing pesticide use in agriculture.</p>
+                                    <p>However, scientists acknowledge risks that require management, including the potential for gene flow and the evolution of resistance in pests or weeds.</p>
+                                </td>
+                                <td>
+                                    <p>Politically, GMOs are centered on regulation, corporate power, and international trade disputes, reflecting diverse global priorities regarding food production and sovereignty.</p>
+                                    <p>Political action largely focuses on how to regulate and inform the public about genetically modified organisms and their impact on society, economics, and environmental sustainability.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <button class="done-btn" onclick="showContent('organizations')">Next</button>
+                </div>
+
+                <!-- Organizations Section -->
+                <div id="organizations" class="content-section hidden">
+                    <h2>Organizations Working With GMOs</h2>
+                    <p style="margin-bottom: 30px;">Various global organizations play crucial roles in regulating, researching, and monitoring genetically modified organisms.</p>
+                    
+                    <table class="org-table">
+                        <thead>
+                            <tr>
+                                <th>Organization</th>
+                                <th>Focus Area</th>
+                                <th>Role & Position on GMOs</th>
+                                <th>Website</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="org-icon">🌾</span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <div class="org-name">FAO</div>
+                                        <div class="org-subtitle">Food and Agriculture Organization</div>
+                                    </div>
+                                </td>
+                                <td>Food Security & Agriculture</td>
+                                <td>Recognizes that genetic modification can help increase crop productivity and contribute to food security. Emphasizes careful evaluation of benefits and risks on a case-by-case basis, including environmental and social impacts.</td>
+                                <td style="text-align: center;">
+                                    <a href="https://www.fao.org" target="_blank" class="org-link-btn">Visit FAO</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="org-icon">🏥</span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <div class="org-name">WHO</div>
+                                        <div class="org-subtitle">World Health Organization</div>
+                                    </div>
+                                </td>
+                                <td>Public Health & Safety</td>
+                                <td>Finds that current GM foods which have undergone risk assessments are unlikely to present risks for human health. Stresses the need for rigorous, continued, and case-by-case safety assessment before any GM food is marketed.</td>
+                                <td style="text-align: center;">
+                                    <a href="https://www.who.int" target="_blank" class="org-link-btn">Visit WHO</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="org-icon">🍽️</span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <div class="org-name">FDA</div>
+                                        <div class="org-subtitle">Food and Drug Administration</div>
+                                    </div>
+                                </td>
+                                <td>Food Safety (U.S.)</td>
+                                <td>Regulates genetically engineered foods to ensure they meet the same strict safety standards as non-GM foods. Position is that foods from genetically engineered plants do not present different or greater safety concerns than conventional foods.</td>
+                                <td style="text-align: center;">
+                                    <a href="https://www.fda.gov" target="_blank" class="org-link-btn">Visit FDA</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="org-icon">🌱</span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <div class="org-name">USDA</div>
+                                        <div class="org-subtitle">U.S. Department of Agriculture</div>
+                                    </div>
+                                </td>
+                                <td>Agriculture Regulation (U.S.)</td>
+                                <td>Regulates GMO crops to ensure they do not pose risks to agriculture, the environment, or the economy. Works to prevent GM plants from becoming plant pests or diseases through the Animal and Plant Health Inspection Service.</td>
+                                <td style="text-align: center;">
+                                    <a href="https://www.usda.gov" target="_blank" class="org-link-btn">Visit USDA</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="org-icon">🌍</span>
+                                    <div style="display: inline-block; vertical-align: middle;">
+                                        <div class="org-name">Greenpeace</div>
+                                        <div class="org-subtitle">Environmental Organization</div>
+                                    </div>
+                                </td>
+                                <td>Environmental Protection</td>
+                                <td>Concerned about how GMOs might affect nature, farmers, and natural crops. Campaigns for stricter regulations, more transparency, and advocates for precautionary approaches to GMO adoption and labeling requirements.</td>
+                                <td style="text-align: center;">
+                                    <a href="https://www.greenpeace.org" target="_blank" class="org-link-btn">Visit Greenpeace</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <button class="done-btn" onclick="showContent('companies')">Next</button>
+                </div>
+
+                <!-- Companies Section -->
+                <div id="companies" class="content-section hidden">
+                    <h2>Major GMO Companies</h2>
+                    <p style="margin-bottom: 30px;">These corporations are the leading developers and distributors of genetically modified seeds and agricultural biotechnology products worldwide.</p>
+                    
+                    <div class="company-grid">
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="./img/monsanto.img.png" alt="Monsanto Logo" class="company-logo">
                             </div>
-                            <div class="video-info">
-                                <h4>Are GMOs Good or Bad?</h4>
-                                <p>Kurzgesagt explains the science behind GMOs and addresses common misconceptions</p>
-                            </div>
+                            <h3>Monsanto</h3>
+                            <p>Monsanto is a leading agricultural company known for developing genetically modified seeds and herbicides. They focus on crop biotechnology to improve yields, resistance, and nutrition in major crops like corn and soybeans.</p>
+                            <a href="https://www.bayer.com/en/agriculture" target="_blank" class="company-link">Learn more →</a>
                         </div>
 
-                        <div class="video-card interactive">
-                            <div class="video-badge health">Health</div>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/sH4bi60alZU" 
-                                        title="GMO Health" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="./img/corteva.img.webp" alt="Corteva Logo" class="company-logo">
                             </div>
-                            <div class="video-info">
-                                <h4>Are GMOs Safe?</h4>
-                                <p>The science behind genetically modified food safety and health studies</p>
-                            </div>
+                            <h3>Corteva Agriscience</h3>
+                            <p>Formed from Dow and DuPont's agriculture divisions, Corteva develops seeds, crop protection, and digital agriculture products. It focuses on sustainable farming solutions and enhancing crop resilience in the face of climate change.</p>
+                            <a href="https://www.corteva.com" target="_blank" class="company-link">Learn more →</a>
                         </div>
 
-                        <div class="video-card interactive">
-                            <div class="video-badge political">Politics</div>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/wZ2TF8-PGQ4" 
-                                        title="GMO Politics" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="./img/syngenta.img.png" alt="Syngenta Logo" class="company-logo">
                             </div>
-                            <div class="video-info">
-                                <h4>The GMO Debate</h4>
-                                <p>Exploring political debates on GMO labeling and consumer rights</p>
+                            <h3>Syngenta Group</h3>
+                            <p>Swiss-based Syngenta, owned by ChemChina, specializes in seeds and crop protection chemicals. The company is heavily involved in GMO research to improve crop yields, nutrition, and resistance to pests and disease.</p>
+                            <a href="https://www.syngenta.com" target="_blank" class="company-link">Learn more →</a>
+                        </div>
+
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="./img/preview.img.webp" alt="BASF Logo" class="company-logo">
+                            </div>
+                            <h3>BASF</h3>
+                            <p>German chemical giant BASF develops agricultural biotechnology products, including genetically modified seeds. The company collaborates with other major firms to innovate in crop protection, yield enhancement, and sustainable agriculture.</p>
+                            <a href="https://agriculture.basf.com" target="_blank" class="company-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="market-insight">
+                        <i class="fas fa-chart-pie"></i>
+                        <p><strong>Market Dominance:</strong> These four corporations control approximately 60% of the global commercial seed market and a similar share of the global pesticide market, giving them massive influence over agriculture practices worldwide.</p>
+                    </div>
+
+                    <button class="done-btn" onclick="showContent('legal')">Next</button>
+                </div>
+
+                <!-- Legal Section -->
+                <div id="legal" class="content-section hidden">
+                    <h2>Legal Framework</h2>
+                    
+                    <div class="legal-frameworks">
+                        <h3>Legal Bases</h3>
+                        
+                        <!-- U.S. Regulation -->
+                        <div class="regulation-card us-regulation">
+                            <div class="regulation-header">
+                                <span class="flag-icon">🇺🇸</span>
+                                <div>
+                                    <h4>United States – Product-Based Regulation</h4>
+                                    <p class="regulation-subtitle">Coordinated Framework for the Regulation of Biotechnology</p>
+                                </div>
+                            </div>
+                            
+                            <div class="agency-grid">
+                                <div class="agency-card">
+                                    <div class="agency-icon">🍎</div>
+                                    <h5>FDA (Food Safety)</h5>
+                                    <p>Ensures GM foods meet the same strict safety standards as all other foods.</p>
+                                </div>
+                                
+                                <div class="agency-card">
+                                    <div class="agency-icon">🌱</div>
+                                    <h5>USDA (Plant Health)</h5>
+                                    <p>Regulates GM plants to prevent them from becoming plant pests or diseases.</p>
+                                </div>
+                                
+                                <div class="agency-card">
+                                    <div class="agency-icon">🛡️</div>
+                                    <h5>EPA (Pesticide Content)</h5>
+                                    <p>Regulates plant-incorporated protectants (PIPs), such as Bt toxin used to resist insects.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="labeling-info">
+                                <h5><i class="label-icon">🏷️</i> Labeling Requirements</h5>
+                                <p>The U.S. implemented the <strong>National Bioengineered Food Disclosure Standard</strong> (mandatory since 2022). Foods must be labeled as <span class="highlight-label">"Bioengineered Food (BE)"</span> or display the BE symbol if they contain detectable modified genetic material.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- EU Regulation -->
+                        <div class="regulation-card eu-regulation">
+                            <div class="regulation-header">
+                                <span class="flag-icon">🇪🇺</span>
+                                <div>
+                                    <h4>European Union – Process-Based Regulation</h4>
+                                    <p class="regulation-subtitle">Regulation 1829/2003</p>
+                                </div>
+                            </div>
+                            
+                            <div class="eu-content">
+                                <p>EU legislation requires extensive, multi-stage risk assessments by the <strong>European Food Safety Authority (EFSA)</strong> before GMOs can be approved. The framework ensures full traceability of GMOs throughout the supply chain.</p>
+                            </div>
+                            
+                            <div class="labeling-info">
+                                <h5><i class="label-icon">🏷️</i> Labeling Requirements</h5>
+                                <p>The EU requires <strong>mandatory labeling</strong> for all food and feed derived from GMOs, even if the final product contains no detectable modified DNA or protein. A threshold of <span class="highlight-label">0.9%</span> applies for accidental presence.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- International Trade -->
+                        <div class="international-section">
+                            <h3><i class="globe-icon">🌍</i> International Trade</h3>
+                            
+                            <div class="trade-grid">
+                                <div class="trade-card">
+                                    <div class="trade-icon">📋</div>
+                                    <h5>Codex Alimentarius (WHO/FAO)</h5>
+                                    <p>Provides voluntary safety assessment guidelines for GMO foods to harmonize global trade.</p>
+                                </div>
+                                
+                                <div class="trade-card">
+                                    <div class="trade-icon">🔒</div>
+                                    <h5>Cartagena Protocol on Biosafety</h5>
+                                    <p>Governs the transboundary movement and handling of LMOs, allowing countries to refuse LMO imports if they lack risk assessment capacity.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <button class="done-btn" onclick="showContent('trivia')">Take the Quiz</button>
                 </div>
-            </div>
-        </div>
-    </main>
 
-      <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>CTRL+ALT+DNA</h3>
-                <p>Exploring the intersection of genetics, health, and policy</p>
-            </div>
-            
-            <div class="footer-section">
-                <a href="index.html">Home</a>
-                <a href="About.html">About</a>
-                <a href="Explore.html" class="active">Explore</a>
-                <a href="Quiz.html">Quiz</a>
-                <a href="Team.html">Team</a>
-                <a href="References.html">References</a>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <!-- Trivia Quiz Section -->
+                <div id="trivia" class="content-section quiz-section hidden">
+                    <h2>🧬 The GMO Trivia Quiz</h2>
+                    <p style="margin-bottom: 30px;">Test your knowledge about genetically modified organisms!</p>
+                    
+                    <form id="gmo-quiz">
+                        <div class="question-container">
+                            <p class="question">1. GMOs are safe to consume</p>
+                            <label><input type="radio" name="q1" value="A"> A. True</label>
+                            <label><input type="radio" name="q1" value="B"> B. False</label>
+                            <div class="feedback" id="feedback1"></div>
+                        </div>
+
+                        <div class="question-container">
+                            <p class="question">2. What is the most common gmo crops?</p>
+                            <label><input type="radio" name="q2" value="A"> A. Bananas</label>
+                            <label><input type="radio" name="q2" value="B"> B. Potatoes</label>
+                            <label><input type="radio" name="q2" value="C"> C. Wheat</label>
+                            <label><input type="radio" name="q2" value="D"> D. Grapes</label>
+                            <div class="feedback" id="feedback2"></div>
+                        </div>
+
+                        <div class="question-container">
+                            <p class="question">3. In 1973, two scientists created the first GMO. Who were they?</p>
+                            <label><input type="radio" name="q3" value="A"> A. Marie Curie & Pierre Curie</label>
+                            <label><input type="radio" name="q3" value="B"> B. Drake & Josh</label>
+                            <label><input type="radio" name="q3" value="C"> C. Herbert Boyer & Stanley Cohen</label>
+                            <label><input type="radio" name="q3" value="D"> D. Robert Swanson & Rudolf Jaenisch</label>
+                            <div class="feedback" id="feedback3"></div>
+                        </div>
+
+                        <div class="question-container">
+                            <p class="question">4. The acronym 'Bt' in Bt crops (like Bt cotton) stands for what?</p>
+                            <label><input type="radio" name="q4" value="A"> A. Beneficial Trait</label>
+                            <label><input type="radio" name="q4" value="B"> B. Bacillus thuringiensis</label>
+                            <label><input type="radio" name="q4" value="C"> C. Bio-Tolerant</label>
+                            <label><input type="radio" name="q4" value="D"> D. Bio-Tolerant</label>
+                            <div class="feedback" id="feedback4"></div>
+                        </div>
+
+                        <div class="question-container">
+                            <p class="question">5. Which of these is NOT one of the four major GMO crops?</p>
+                            <label><input type="radio" name="q5" value="A"> A. Wheat</label>
+                            <label><input type="radio" name="q5" value="B"> B. Corn</label>
+                            <label><input type="radio" name="q5" value="C"> C. Canola</label>
+                            <div class="feedback" id="feedback5"></div>
+                        </div>
+
+                         <button type="button" class="done-btn" onclick="checkAnswers()">Submit Quiz</button>
+                        <p id="result-message"></p>
+                        <button type="button" class="done-btn" id="next-to-interactive" style="display: none;" onclick="goToInteractive()">Next: Interactive Hub →</button>
+                    </form>
                 </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 CTRL+ALT+DNA. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="./js/interactive.js"></script>
+    </div>
+
+    <script src="./js/Explore.js"></script>
 </body>
 </html>
