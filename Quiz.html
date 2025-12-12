@@ -3,109 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMO Knowledge Quiz - CTRL+ALT+DNA</title>
+    <title>Quiz - CTRL+ALT+DNA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/Quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/quiz.css">
 </head>
 <body>
-     <!-- Animated Background - SINGLE INSTANCE -->
-    <div class="dna-background">
-        <!-- DNA Double Helix -->
-        <div class="dna-helix">
-            <div class="helix-strand"></div>
+
+    <!-- Background Decoration -->
+    <div class="bg-decoration">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <!-- Floating DNA Strands -->
+        <div class="floating-dna" style="top: 15%; left: 10%;">
+            <div class="dna-strand"></div>
         </div>
-
-        <!-- Floating Molecules - SCIENCE -->
-        <div class="molecule">
-            <div class="molecule-atom" style="top: 0; left: 0;"></div>
-            <div class="molecule-atom" style="top: 0; right: 0;"></div>
-            <div class="molecule-atom" style="bottom: 0; left: 30px;"></div>
-            <div class="molecule-atom" style="bottom: 0; right: 30px;"></div>
-            <div class="molecule-bond" style="top: 10px; left: 10px; width: 60px; transform: rotate(0deg);"></div>
-            <div class="molecule-bond" style="top: 10px; left: 10px; width: 50px; transform: rotate(45deg);"></div>
-            <div class="molecule-bond" style="top: 10px; right: 10px; width: 50px; transform: rotate(-45deg);"></div>
+        <div class="floating-dna" style="top: 60%; right: 15%;">
+            <div class="dna-strand"></div>
         </div>
-
-        <div class="molecule">
-            <div class="molecule-atom" style="top: 0; left: 0;"></div>
-            <div class="molecule-atom" style="top: 0; right: 0;"></div>
-            <div class="molecule-atom" style="bottom: 0; left: 30px;"></div>
-            <div class="molecule-atom" style="bottom: 0; right: 30px;"></div>
-            <div class="molecule-bond" style="top: 10px; left: 10px; width: 60px;"></div>
-            <div class="molecule-bond" style="bottom: 10px; left: 40px; width: 40px;"></div>
+        <div class="floating-dna" style="bottom: 25%; left: 20%;">
+            <div class="dna-strand"></div>
         </div>
-
-        <div class="molecule">
-            <div class="molecule-atom" style="top: 10px; left: 30px;"></div>
-            <div class="molecule-atom" style="top: 50px; left: 0;"></div>
-            <div class="molecule-atom" style="top: 50px; right: 0;"></div>
-            <div class="molecule-bond" style="top: 20px; left: 15px; width: 30px; transform: rotate(-45deg);"></div>
-            <div class="molecule-bond" style="top: 20px; right: 15px; width: 30px; transform: rotate(45deg);"></div>
+        
+        <!-- Health Icons -->
+        <div class="floating-icon health" style="top: 20%; right: 10%;">
+            <i class="fas fa-heartbeat"></i>
         </div>
-
-        <div class="molecule">
-            <div class="molecule-atom" style="top: 0; left: 30px;"></div>
-            <div class="molecule-atom" style="bottom: 0; left: 0;"></div>
-            <div class="molecule-atom" style="bottom: 0; right: 0;"></div>
-            <div class="molecule-bond" style="top: 10px; left: 15px; width: 40px; transform: rotate(60deg);"></div>
-            <div class="molecule-bond" style="top: 10px; right: 15px; width: 40px; transform: rotate(-60deg);"></div>
+        <div class="floating-icon health" style="bottom: 30%; left: 8%;">
+            <i class="fas fa-pills"></i>
         </div>
-
-        <!-- Gene Sequences - SCIENCE -->
-        <div class="gene-sequence">ATCG-TAGC-CGTA-ATGC-GCTA-TACG-CGAT-GCTA • CRISPR • Gene Editing</div>
-        <div class="gene-sequence">GCTA-ATCG-TAGC-CGTA-GCTA-ATGC-TACG-ATCG • Biotechnology • DNA</div>
-        <div class="gene-sequence">TAGC-CGTA-ATGC-GCTA-TACG-CGAT-ATCG-TAGC • Genetic Engineering</div>
-
-        <!-- Cell Structures -->
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-
-        <!-- HEALTH Icons -->
-        <div class="health-icon"><i class="fas fa-heartbeat"></i></div>
-        <div class="health-icon"><i class="fas fa-pills"></i></div>
-        <div class="health-icon"><i class="fas fa-apple-alt"></i></div>
-
-        <!-- POLITICS Icons -->
-        <div class="politics-icon"><i class="fas fa-balance-scale"></i></div>
-        <div class="politics-icon"><i class="fas fa-gavel"></i></div>
-        <div class="politics-icon"><i class="fas fa-landmark"></i></div>
-
-        <!-- HEALTH Scrolling Text -->
-        <div class="health-text">• NUTRITION • SAFETY TESTING • ALLERGEN SCREENING • HEALTH IMPACT • VITAMIN ENHANCEMENT •</div>
-        <div class="health-text">• FOOD SECURITY • DIETARY BENEFITS • CLINICAL TRIALS • NUTRITIONAL VALUE •</div>
-
-        <!-- POLITICS Scrolling Text -->
-        <div class="politics-text">• REGULATIONS • FDA APPROVAL • LABELING LAWS • POLICY DEBATES • ETHICAL CONSIDERATIONS •</div>
-        <div class="politics-text">• INTERNATIONAL TRADE • CONSUMER RIGHTS • BIOSAFETY PROTOCOLS • LEGISLATION •</div>
+        <div class="floating-icon health" style="top: 70%; right: 25%;">
+            <i class="fas fa-apple-alt"></i>
+        </div>
+        
+        <!-- Science Icons -->
+        <div class="floating-icon science" style="top: 35%; left: 5%;">
+            <i class="fas fa-microscope"></i>
+        </div>
+        <div class="floating-icon science" style="bottom: 40%; right: 8%;">
+            <i class="fas fa-flask"></i>
+        </div>
+        <div class="floating-icon science" style="top: 55%; right: 30%;">
+            <i class="fas fa-atom"></i>
+        </div>
+        
+        <!-- Political Icons -->
+        <div class="floating-icon political" style="top: 45%; right: 5%;">
+            <i class="fas fa-balance-scale"></i>
+        </div>
+        <div class="floating-icon political" style="bottom: 20%; left: 30%;">
+            <i class="fas fa-gavel"></i>
+        </div>
+        <div class="floating-icon political" style="top: 25%; left: 25%;">
+            <i class="fas fa-landmark"></i>
+        </div>
+        
+        <!-- Floating Molecules -->
+        <div class="molecule" style="top: 10%; left: 15%;">
+            <div class="atom"></div>
+            <div class="atom"></div>
+            <div class="atom"></div>
+        </div>
+        <div class="molecule" style="bottom: 35%; right: 12%;">
+            <div class="atom"></div>
+            <div class="atom"></div>
+            <div class="atom"></div>
+        </div>
+        
+        <!-- Gene Sequence Text -->
+        <div class="gene-text" style="top: 12%; animation-delay: 0s;">ATCG • GENE EDITING • CRISPR • BIOTECHNOLOGY</div>
+        <div class="gene-text" style="top: 40%; animation-delay: 5s;">GMO • GENETIC MODIFICATION • DNA SEQUENCE</div>
+        <div class="gene-text" style="bottom: 20%; animation-delay: 10s;">HEALTH • SCIENCE • POLICY • INNOVATION</div>
     </div>
-
-    <div class="dna-background">
-        <div class="floating-dna" style="top: 10%; left: 10%;">🧬</div>
-        <div class="floating-dna" style="top: 30%; right: 15%; animation-delay: 2s;">🧬</div>
-        <div class="floating-dna" style="bottom: 20%; left: 20%; animation-delay: 4s;">🧬</div>
-        <div class="floating-dna" style="top: 60%; right: 25%; animation-delay: 6s;">🧬</div>
-    </div>
-
-    <div class="container">
-        <header>
-            <h1>CTRL+ALT+DNA</h1>
-            <nav>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">CTRL+ALT+DNA</span>
+            </div>
+            <nav class="nav">
                 <a href="index.html">Home</a>
+                <a href="About.html">About</a>
                 <a href="Explore.html">Explore</a>
-                <a href="interactive.html">Interactive Hub</a>
-                <a href="AboutUs.html">About</a>
-                <a href="Quiz.html">Quiz</a>
-                <a href="Contact.html">Contact</a>
+                <a href="Quiz.html" class="active">Quiz</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
+    <!-- Main Container -->
+    <div class="container">
         <div class="quiz-container">
             <div class="quiz-header">
                 <h2>🎯 Test Your GMO Knowledge</h2>
                 <p>Think you know about GMOs? Take this interactive quiz to test your understanding and learn fascinating facts along the way!</p>
             </div>
 
+            <!-- Quiz Section -->
             <div id="quizSection">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
@@ -113,19 +109,21 @@
                 
                 <div class="question-counter" id="questionCounter">Question 1 of 10</div>
 
-                <!-- Questions will be dynamically inserted here -->
+                <!-- Questions Container -->
                 <div id="questionsContainer"></div>
 
+                <!-- Navigation Buttons -->
                 <div class="quiz-buttons">
-                    <button class="quiz-btn secondary" id="prevBtn" onclick="previousQuestion()" disabled>
-                        <i class="fas fa-arrow-left icon"></i>Previous
+                    <button class="quiz-btn secondary" id="prevBtn" disabled>
+                        <i class="fas fa-arrow-left"></i> Previous
                     </button>
-                    <button class="quiz-btn" id="nextBtn" onclick="nextQuestion()" disabled>
-                        Next<i class="fas fa-arrow-right icon"></i>
+                    <button class="quiz-btn" id="nextBtn" disabled>
+                        Next <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
 
+            <!-- Results Section -->
             <div class="results-container" id="resultsSection">
                 <h2 style="color: #64ffda; font-size: 2.5em; margin-bottom: 20px;">🎉 Quiz Complete!</h2>
                 
@@ -152,16 +150,49 @@
                 </div>
 
                 <div class="share-buttons">
-                    <button class="share-btn" onclick="shareScore()">
-                        <i class="fas fa-share-alt icon"></i>Share Score
+                    <button class="share-btn" id="shareBtn">
+                        <i class="fas fa-share-alt"></i> Share Score
                     </button>
-                    <button class="share-btn" onclick="restartQuiz()">
-                        <i class="fas fa-redo icon"></i>Retake Quiz
+                    <button class="share-btn" id="restartBtn">
+                        <i class="fas fa-redo"></i> Retake Quiz
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CTRL+ALT+DNA</h3>
+                <p>Exploring the intersection of genetics, health, and policy</p>
+            </div>
+            
+            <div class="footer-section">
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="Explore.html">Explore</a>
+                <a href="Quiz.html" class="active">Quiz</a>
+                <a href="Team.html">Team</a>
+                <a href="">References</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 CTRL+ALT+DNA. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="./js/quiz.js"></script>
 </body>
